@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
+    Button btn1, btn2;
 
     //클릭 이벤트 처리를 위한 클래스
     class ClickClass implements View.OnClickListener{
@@ -73,6 +74,33 @@ public class MainActivity extends AppCompatActivity {
         btnDelegate.setOnClickListener((View v)->{
             Toast.makeText(getApplicationContext(), "람다식을 이용한 이벤트 처리", Toast.LENGTH_LONG).show();
         });
+
+
+        btn1 = (Button)findViewById(R.id.btn1);
+        btn2 = (Button)findViewById(R.id.btn2);
+
+        View.OnClickListener router = new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                //switch문으로 하는 경우
+/*                switch(v.getId()){
+                    case R.id.btn1:
+                        Toast.makeText(getApplicationContext(), "1번 좌석 예약", Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.btn2:
+                        Toast.makeText(getApplicationContext(), "2번 좌석 예약", Toast.LENGTH_LONG).show();
+                        break;
+                }*/
+
+                //이벤트가 발생한 뷰의 텍스트를 출력
+                Button btn = (Button)v;
+                Toast.makeText(getApplicationContext(), btn.getText().toString(), Toast.LENGTH_LONG).show();
+            }
+        };
+
+        //버튼과 이벤트 핸들러를 연결
+        btn1.setOnClickListener(router);
+        btn2.setOnClickListener(router);
     }
 
 
