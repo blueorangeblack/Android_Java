@@ -7,4 +7,12 @@
         <item>Information Hidden</item>
         <item>Abstract</item>
     </string-array>
+    <string-array name="dbms">
+        <item>Oracle</item>
+        <item>MySQL (Maria DB)</item>
+        <item>MS-SQL Server</item>
+        <item>MongoDB</item>
+        <item>Firebase</item>
+        <item>SQLite</item>
+    </string-array>
 </resources>
