@@ -19,7 +19,7 @@ import java.net.URL;
 
 public class HtmlDownloadActivity extends AppCompatActivity {
 
-    //데이터를 출력할 핸들로
+    //데이터를 출력할 핸들러
     Handler handler = new Handler(Looper.getMainLooper()){
         @Override
         public void handleMessage(Message msg){
